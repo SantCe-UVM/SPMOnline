@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BankEnd", "BankEnd", "{368E5FB1-79AD-4C5B-919B-ABB4CBD97AE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{E93C2329-1EC3-4E22-8D34-919C7CDB911F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sport.Web", "Sport.Web\Sport.Web.csproj", "{C60AFE0C-D548-4DF1-8978-866A9B64CB16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C60AFE0C-D548-4DF1-8978-866A9B64CB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60AFE0C-D548-4DF1-8978-866A9B64CB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60AFE0C-D548-4DF1-8978-866A9B64CB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60AFE0C-D548-4DF1-8978-866A9B64CB16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C60AFE0C-D548-4DF1-8978-866A9B64CB16} = {368E5FB1-79AD-4C5B-919B-ABB4CBD97AE4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {488A2CCA-EDBA-4F51-ADDA-067248496211}
+	EndGlobalSection
+EndGlobal
