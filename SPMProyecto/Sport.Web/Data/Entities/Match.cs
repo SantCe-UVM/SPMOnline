@@ -4,8 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sport.Web.Data.Entities
 {
-    public class Match: IEntity
+    public class Match : IEntity
     {
+        public int Id { get; set; }
 
         /*[Required]
         [MaxLength(50, ErrorMessage = "The field {0} must have maximum {1} characters")]
@@ -38,8 +39,13 @@ namespace Sport.Web.Data.Entities
         public string MatchLocation { get; set; }
 
         [Required]
-        [DataType(DataType.Hour)] //¿Cómo se pone el formato de horario?
+        [MaxLength(25, ErrorMessage = "The field {0} must have maximum {1} characters")]
         [Display(Name = "Match Hour")]
-        public DateTime MatchDate { get; set; }
+        public int MatchHours { get; set; }
+
+        [Required]
+        [MaxLength(25, ErrorMessage = "The field {0} must have maximum {1} characters")]
+        [Display(Name = "Match Minutes")]
+        public int MatchMinutes { get; set; }
     }
 }

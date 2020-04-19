@@ -18,7 +18,7 @@ namespace Sport.Web.Data.Entities
         [Display(Name = "Sport")]
         public string Sport { get; set; }
 
-        /*[Required]
+        /*[Required]-*
         [MaxLength(2, ErrorMessage = "The field {0} must have maximum {1} characters")]
         [Display(Name = "Teams on Tournament")]
         public string TeamsTournament { get; set; }*/
