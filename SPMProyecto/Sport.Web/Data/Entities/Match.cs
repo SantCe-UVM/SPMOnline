@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sport.Web.Data.Entities
 {
-    public class Match: IEntity
+    public class Match : IEntity
     {
 
         /*[Required]
