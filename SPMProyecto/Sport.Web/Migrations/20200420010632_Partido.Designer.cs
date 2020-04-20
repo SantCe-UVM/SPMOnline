@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sport.Web.Data;
 
 namespace Sport.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200420010632_Partido")]
+    partial class Partido
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,38 +50,6 @@ namespace Sport.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Matchs");
-                });
-
-            modelBuilder.Entity("Sport.Web.Data.Entities.Team", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Coach")
-                        .HasMaxLength(2);
-
-                    b.Property<DateTime>("FoundationDate");
-
-                    b.Property<string>("HomeCountry")
-                        .IsRequired()
-                        .HasMaxLength(25);
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasMaxLength(25);
-
-                    b.Property<string>("Sport")
-                        .IsRequired()
-                        .HasMaxLength(25);
-
-                    b.Property<string>("TeamName")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("Sport.Web.Data.Entities.Tournament", b =>

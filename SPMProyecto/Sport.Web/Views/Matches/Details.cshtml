@@ -1,0 +1,54 @@
+﻿@model Sport.Web.Data.Entities.Match
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Match</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sport)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sport)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MatchDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MatchLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchHours)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MatchHours)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchMinutes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MatchMinutes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
