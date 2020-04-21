@@ -62,6 +62,9 @@ namespace Sport.Web.Data.Entities
         [Display(Name = "Coach")]
         public bool Coach { get; set; }
 
+        [Display(Name = "Género")]
+        public Category Category { get; set; }
+
         /*[Required]
         [MaxLength(2, ErrorMessage = "The field {0} must have maximum {1} characters")]
         [Display(Name = "Teams")]

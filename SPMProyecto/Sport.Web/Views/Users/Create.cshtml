@@ -1,4 +1,4 @@
-﻿@model Sport.Web.Data.Entities.User
+﻿@model Sport.Web.Models.UserViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
+                <input asp-for="ImageUrl" class="form-control" type="file" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -56,6 +56,11 @@
                 <label asp-for="Health" class="control-label"></label>
                 <input asp-for="Health" class="form-control" />
                 <span asp-validation-for="Health" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" asp-items="Model.Categories" class="form-control" />
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Sport" class="control-label"></label>

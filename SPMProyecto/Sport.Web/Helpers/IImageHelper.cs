@@ -1,7 +1,12 @@
 ﻿namespace Sport.Web.Helpers
 {
+    using Microsoft.AspNetCore.Http;
+    using System.Threading.Tasks;
     public interface IImageHelper
     {
-        string UploadImageAsync();
+        Task<string> UploadImageAsync(
+            IFormFile imageFile,
+            string nameFile,
+            string nameFolder);
     }
 }

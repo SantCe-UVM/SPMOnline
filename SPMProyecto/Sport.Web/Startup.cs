@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Sport.Web.Data;
+using Sport.Web.Helpers;
 
 namespace Sport.Web
 {
@@ -37,6 +38,8 @@ namespace Sport.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<ICombosHelper, CombosHelper>();
+            services.AddScoped<IImageHelper, IImageHelper>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

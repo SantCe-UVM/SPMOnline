@@ -7,16 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Sport.Web.Data;
 using Sport.Web.Data.Entities;
+using Sport.Web.Helpers;
+using Sport.Web.Models;
 
 namespace Sport.Web.Controllers
 {
     public class UsersController : Controller
     {
         private readonly DataContext _context;
+        private readonly ICombosHelper combosHelper;
+        private readonly IImageHelper imageHelper;
 
-        public UsersController(DataContext context)
+        public UsersController(DataContext context,
+            ICombosHelper combosHelper,
+            IImageHelper imageHelper)
         {
             _context = context;
+            this.combosHelper = combosHelper;
+            this.imageHelper = imageHelper;
         }
 
         // GET: Users
@@ -46,6 +54,10 @@ namespace Sport.Web.Controllers
         // GET: Users/Create
         public IActionResult Create()
         {
+            var model = new UserViewModel
+            {
+                Categories = combosHelper.GetComboCategories()
+            };
             return View();
         }
 

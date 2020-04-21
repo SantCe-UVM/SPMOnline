@@ -5,6 +5,7 @@ namespace Sport.Web.Data
 {
     public class DataContext : DbContext
     {
+        public DbSet<Category> Categories { get; set; }
         public DbSet<User> Users { get; set; }
 
         public DbSet<Tournament> Tournaments { get; set; }
