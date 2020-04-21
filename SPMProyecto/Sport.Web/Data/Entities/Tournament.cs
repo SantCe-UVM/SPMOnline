@@ -9,6 +9,11 @@ namespace Sport.Web.Data.Entities
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Logo del torneo")]
+        public string ImageUrl { get; set; }
+
+
+        [Required]
         [MaxLength(50, ErrorMessage = "The field {0} must have maximum {1} characters")]
         [Display(Name = "Tournament Name")]
         public string Name { get; set; }
@@ -17,6 +22,8 @@ namespace Sport.Web.Data.Entities
         [MaxLength(25, ErrorMessage = "The field {0} must have maximum {1} characters")]
         [Display(Name = "Sport")]
         public string Sport { get; set; }
+
+
 
         /*[Required]-*
         [MaxLength(2, ErrorMessage = "The field {0} must have maximum {1} characters")]

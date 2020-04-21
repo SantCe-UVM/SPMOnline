@@ -10,8 +10,8 @@ using Sport.Web.Data;
 namespace Sport.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200420004732_Toreno")]
-    partial class Toreno
+    [Migration("20200421044359_inicio")]
+    partial class inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,25 +20,6 @@ namespace Sport.Web.Migrations
                 .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Sport.Web.Data.Entities.Tournament", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Sport")
-                        .IsRequired()
-                        .HasMaxLength(25);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tournaments");
-                });
 
             modelBuilder.Entity("Sport.Web.Data.Entities.User", b =>
                 {
@@ -68,6 +49,9 @@ namespace Sport.Web.Migrations
                     b.Property<string>("HomeCountry")
                         .IsRequired()
                         .HasMaxLength(25);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
 
                     b.Property<string>("Location")
                         .IsRequired()

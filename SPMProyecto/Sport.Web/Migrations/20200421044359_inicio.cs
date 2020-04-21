@@ -14,6 +14,7 @@ namespace Sport.Web.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ImageUrl = table.Column<string>(nullable: false),
                     FullName = table.Column<string>(maxLength: 50, nullable: false),
                     BirthDate = table.Column<DateTime>(nullable: false),
                     Age = table.Column<float>(maxLength: 2, nullable: false),

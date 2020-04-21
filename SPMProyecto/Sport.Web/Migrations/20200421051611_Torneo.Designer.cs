@@ -10,8 +10,8 @@ using Sport.Web.Data;
 namespace Sport.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200420010632_Partido")]
-    partial class Partido
+    [Migration("20200421051611_Torneo")]
+    partial class Torneo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,11 +52,49 @@ namespace Sport.Web.Migrations
                     b.ToTable("Matchs");
                 });
 
+            modelBuilder.Entity("Sport.Web.Data.Entities.Team", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Coach")
+                        .HasMaxLength(2);
+
+                    b.Property<DateTime>("FoundationDate");
+
+                    b.Property<string>("HomeCountry")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.Property<string>("Sport")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.Property<string>("TeamName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Teams");
+                });
+
             modelBuilder.Entity("Sport.Web.Data.Entities.Tournament", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -99,6 +137,9 @@ namespace Sport.Web.Migrations
                     b.Property<string>("HomeCountry")
                         .IsRequired()
                         .HasMaxLength(25);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
 
                     b.Property<string>("Location")
                         .IsRequired()

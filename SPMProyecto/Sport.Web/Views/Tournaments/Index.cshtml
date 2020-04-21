@@ -1,17 +1,20 @@
 ﻿@model IEnumerable<Sport.Web.Data.Entities.Tournament>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de Torneos";
 }
 
-<h2>Index</h2>
+<h2>Lista de Torneos</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary"><span class="glyphicon-plus"></span></a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -24,6 +27,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

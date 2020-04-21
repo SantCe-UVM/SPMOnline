@@ -10,8 +10,8 @@ using Sport.Web.Data;
 namespace Sport.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200419231355_inicio")]
-    partial class inicio
+    [Migration("20200421045405_Partido")]
+    partial class Partido
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,37 @@ namespace Sport.Web.Migrations
                 .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Sport.Web.Data.Entities.Match", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("MatchDate");
+
+                    b.Property<int>("MatchHours")
+                        .HasMaxLength(25);
+
+                    b.Property<string>("MatchLocation")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.Property<int>("MatchMinutes")
+                        .HasMaxLength(25);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Sport")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Matchs");
+                });
 
             modelBuilder.Entity("Sport.Web.Data.Entities.User", b =>
                 {
@@ -49,6 +80,9 @@ namespace Sport.Web.Migrations
                     b.Property<string>("HomeCountry")
                         .IsRequired()
                         .HasMaxLength(25);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
 
                     b.Property<string>("Location")
                         .IsRequired()

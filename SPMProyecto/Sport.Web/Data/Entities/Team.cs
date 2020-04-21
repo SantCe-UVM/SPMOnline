@@ -1,5 +1,6 @@
 ﻿using Sport.Web.Data.IEntities;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Sport.Web.Data.Entities
@@ -7,6 +8,10 @@ namespace Sport.Web.Data.Entities
     public class Team : IEntity
     {
         public int Id { get; set; }
+
+        [Required]
+        [Display(Name = "Logo")]
+        public string ImageUrl { get; set; }
 
         [Required]
         [MaxLength(50, ErrorMessage = "The field {0} must have maximum {1} characters")]
@@ -37,6 +42,8 @@ namespace Sport.Web.Data.Entities
         [MaxLength(2, ErrorMessage = "The field {0} must have maximum {1} characters")]
         [Display(Name = "Coach")]
         public bool Coach { get; set; }
+
+    
 
         /*[Required]
         [MaxLength(2, ErrorMessage = "The field {0} must have maximum {1} characters")]

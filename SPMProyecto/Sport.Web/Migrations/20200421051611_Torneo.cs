@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Sport.Web.Migrations
 {
-    public partial class Toreno : Migration
+    public partial class Torneo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,6 +13,7 @@ namespace Sport.Web.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ImageUrl = table.Column<string>(nullable: false),
                     Name = table.Column<string>(maxLength: 50, nullable: false),
                     Sport = table.Column<string>(maxLength: 25, nullable: false)
                 },

@@ -10,7 +10,7 @@ using Sport.Web.Data;
 namespace Sport.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200420011444_Equipo")]
+    [Migration("20200421052616_Equipo")]
     partial class Equipo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,6 +67,9 @@ namespace Sport.Web.Migrations
                         .IsRequired()
                         .HasMaxLength(25);
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasMaxLength(25);
@@ -89,6 +92,9 @@ namespace Sport.Web.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -131,6 +137,9 @@ namespace Sport.Web.Migrations
                     b.Property<string>("HomeCountry")
                         .IsRequired()
                         .HasMaxLength(25);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
 
                     b.Property<string>("Location")
                         .IsRequired()

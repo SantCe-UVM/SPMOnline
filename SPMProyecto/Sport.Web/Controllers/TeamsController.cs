@@ -54,7 +54,7 @@ namespace Sport.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TeamName,FoundationDate,HomeCountry,Location,Sport,Coach")] Team team)
+        public async Task<IActionResult> Create([Bind("Id,ImageUrl,TeamName,FoundationDate,HomeCountry,Location,Sport,Coach")] Team team)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Sport.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TeamName,FoundationDate,HomeCountry,Location,Sport,Coach")] Team team)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ImageUrl,TeamName,FoundationDate,HomeCountry,Location,Sport,Coach")] Team team)
         {
             if (id != team.Id)
             {

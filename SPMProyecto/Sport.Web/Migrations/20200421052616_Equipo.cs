@@ -14,6 +14,7 @@ namespace Sport.Web.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ImageUrl = table.Column<string>(nullable: false),
                     TeamName = table.Column<string>(maxLength: 50, nullable: false),
                     FoundationDate = table.Column<DateTime>(nullable: false),
                     HomeCountry = table.Column<string>(maxLength: 25, nullable: false),
