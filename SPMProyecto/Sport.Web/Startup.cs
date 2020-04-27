@@ -39,7 +39,7 @@ namespace Sport.Web
             });
 
             services.AddScoped<ICombosHelper, CombosHelper>();
-            services.AddScoped<IImageHelper, IImageHelper>();
+            //services.AddScoped<IImageHelper, IImageHelper>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
