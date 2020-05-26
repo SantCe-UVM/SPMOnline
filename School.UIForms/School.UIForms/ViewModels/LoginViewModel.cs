@@ -42,8 +42,8 @@
 			//		"LISTOOO",
 			//		"OK",
 			//		"Accept");
-			MainViewModel.GetInstance().Subjects = new SubjectsViewModel();
-			await Application.Current.MainPage.Navigation.PushAsync(new SubjectsPage());
+			MainViewModel.GetInstance().Players = new PlayersViewModel();
+			await Application.Current.MainPage.Navigation.PushAsync(new PlayersPage());
 			return;
 		}
 		public LoginViewModel()
